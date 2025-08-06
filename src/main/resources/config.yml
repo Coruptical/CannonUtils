@@ -1,0 +1,6 @@
+# This option changes the material that is used for the explosion protection block.
+# Use the block name from in game to change this, and try to keep it uppercase.
+protection_block: 'EMERALD_BLOCK'
+
+# This option changes the item type that is considered to be the "tick counter"
+tick_counter: 'BLAZE_ROD'
