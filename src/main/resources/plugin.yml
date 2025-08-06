@@ -1,0 +1,6 @@
+name: CannonUtils
+version: '1.0'
+main: com.coruptical.cannonUtils.CannonUtils
+api-version: '1.21'
+authors: [ Coruptical ]
+description: Library of useful cannoning utilities
