@@ -4,3 +4,14 @@ main: com.coruptical.cannonUtils.CannonUtils
 api-version: '1.21'
 authors: [ Coruptical ]
 description: Library of useful cannoning utilities
+commands:
+  tickcounter:
+    aliases:
+      - tc
+    description: Get a tick counter to count redstone ticks accurately.
+  magicsand:
+    aliases:
+      - ms
+    description: Get magic sand to fill your cannons with sand.
+  fire:
+    description: Fire a cannon by automatically pressing a saved button.

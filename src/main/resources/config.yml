@@ -2,5 +2,20 @@
 # Use the block name from in game to change this, and try to keep it uppercase.
 protection_block: 'EMERALD_BLOCK'
 
-# This option changes the item type that is considered to be the "tick counter"
+# This option changes the item type that is considered to be the tick counter.
 tick_counter: 'BLAZE_ROD'
+
+# This option controls the permission name for the tick counter command.
+tick_counter_permission: 'cannonutils.tickcounter'
+
+# This option controls the permission name for the magic sand command.
+magic_sand_permission: 'cannonutis.magicsand'
+
+# This option controls the permission name for the /fire command.
+fire_permission: 'cannonutils.fire'
+
+# This option controls the period of time before each magic sand block places a falling block of its type.
+# It's recommended to leave this at the default,
+# but change it if there is so much magic sand the server is lagging or the default delay isn't short enough for some cannons.
+# Value provided must be a positive integer > 0, otherwise will be set back to default.
+magic_sand_period: 8

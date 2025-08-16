@@ -50,4 +50,26 @@ public class ConfigHandler {
     public Material getTickCounterMaterial(){
         return tickCounterMaterial;
     }
+
+
+    public String getTickCounterPermission(){
+        return plugin.getConfig().getString("tick_counter_permission");
+    }
+
+    public String getMagicSandPermission(){
+        return plugin.getConfig().getString("magic_sand_permission");
+    }
+
+    public String getFirePermission(){
+        return plugin.getConfig().getString("fire_permission");
+    }
+
+    public long getMagicSandPeriod(){
+        long period = 8L; // Default
+        long configPeriod = plugin.getConfig().getLong("magic_sand_period");
+        if (configPeriod <= 0) return period;
+        period = configPeriod;
+        return period;
+    }
+
 }
