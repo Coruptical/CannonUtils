@@ -28,10 +28,11 @@ public class BlockPlaceBreakHandler implements Listener {
         if (!Constants.MS_ACCEPTED.contains(b.getType())) return;
         if (!p.getInventory().getItemInMainHand().getItemMeta().getPersistentDataContainer().has(NSKey.MAGIC_SAND.key)) return;
 
-        e.setCancelled(true);
+        Material msType = b.getType();
         b.setType(Material.SEA_LANTERN);
+        // e.setCancelled(true);
 
-        MagicSand ms = new MagicSand(b.getLocation(), b.getType());
+        MagicSand ms = new MagicSand(b.getLocation(), msType);
         handler.getPlayerMagicSand().get(p).add(ms);
         handler.getMagicSandLocations().put(b.getLocation(), ms);
         p.sendMessage(Utils.cmsg(Strings.MAGIC_SAND_PLACED.label));

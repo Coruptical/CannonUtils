@@ -32,6 +32,11 @@ public class MagicSandCommand implements CommandExecutor {
         }
 
         // TODO: Implement a list of falling blocks: sand, red sand, gravel, anvils, (scaffolding??)
+        if (args.length < 1){
+            p.sendMessage(Utils.cmsg(Strings.TOO_FEW_ARGS.label));
+            return true;
+        }
+
         String arg1 =  args[0].toUpperCase();
         Material mat = null;
         mat = Material.matchMaterial(arg1);

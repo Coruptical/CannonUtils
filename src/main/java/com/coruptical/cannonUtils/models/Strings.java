@@ -7,7 +7,8 @@ public enum Strings {
     MAGIC_SAND_NAME("&7[&bMagic Sand&7]"),
     INVALID_MAGIC_SAND_MATERIAL("&7Invalid magic sand material."),
     MAGIC_SAND_PLACED("&aMagic sand placed."),
-    BUTTON_SAVED("&7Button saved for /fire.");
+    BUTTON_SAVED("&7Button saved for /fire."),
+    TOO_FEW_ARGS("&7You've provided too little arguments for this command.");
 
     public final String label;
 

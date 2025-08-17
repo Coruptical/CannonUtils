@@ -21,6 +21,7 @@ public final class CannonUtils extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        saveDefaultConfig();
         ConfigHandler.getInstance().init(this);
         loadListeners();
         loadCommands();
@@ -34,10 +35,10 @@ public final class CannonUtils extends JavaPlugin {
     }
 
     private void loadListeners(){
-        getServer().getPluginManager().registerEvents(new ExplosionEventHandler(), this);
-        getServer().getPluginManager().registerEvents(new BlockInteractHandler(), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoinQuitHandler(), this);
-        getServer().getPluginManager().registerEvents(new BlockPlaceBreakHandler(), this);
+        getServer().getPluginManager().registerEvents(new ExplosionEventHandler(), instance);
+        getServer().getPluginManager().registerEvents(new BlockInteractHandler(), instance);
+        getServer().getPluginManager().registerEvents(new PlayerJoinQuitHandler(), instance);
+        getServer().getPluginManager().registerEvents(new BlockPlaceBreakHandler(), instance);
     }
 
     private void loadCommands(){

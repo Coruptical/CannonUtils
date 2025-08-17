@@ -42,7 +42,7 @@ public class BlockInteractHandler implements Listener {
         switch (b.getType()){
             case REPEATER -> {
                 Repeater repeater = (Repeater) b.getState().getBlockData();
-                counter.addTicks(repeater.getDelay());
+                counter.addTicks(repeater.getDelay() * 2);
             }
             case COMPARATOR -> {
                 counter.addTicks(2);
@@ -52,6 +52,21 @@ public class BlockInteractHandler implements Listener {
         }
 
         counter.sendTiming(p);
+    }
+
+
+    // Handle interaction for clearing tick counter
+    @EventHandler
+    public void onPlayerClearTickCounter(PlayerInteractEvent e){
+        Player p = e.getPlayer();
+        if (!e.hasItem()) return;
+        if (!e.getItem().getType().equals(tickCounterMaterial)) return;
+        if (!e.getItem().getItemMeta().getPersistentDataContainer().has(NSKey.TICK_COUNTER.key)) return;
+        if (!(e.getAction().equals(Action.LEFT_CLICK_AIR) || e.getAction().equals(Action.LEFT_CLICK_BLOCK))) return;
+
+        e.setCancelled(true);
+        TickCounter counter = PlayerInfoHandler.getInstance().getPlayerTickCounters().get(p);
+        counter.clear(p);
     }
 
     // Handle interaction for saving /fire button
