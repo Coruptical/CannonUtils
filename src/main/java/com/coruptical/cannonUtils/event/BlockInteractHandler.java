@@ -48,6 +48,8 @@ public class BlockInteractHandler implements Listener {
                 counter.addTicks(2);
                 counter.addPriority(1);
             }
+            case OBSERVER -> counter.addTicks(2);
+            case REDSTONE_TORCH -> counter.addTicks(1);
             // TODO: I need to handle pistons firing, and detect when theres 2 in sequence to create 3 gt delay instead of 2.
         }
 
@@ -75,13 +77,12 @@ public class BlockInteractHandler implements Listener {
         Player p = e.getPlayer();
         if (!e.hasBlock()) return;
         if (!e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
+        Block b = e.getClickedBlock();
+        if (!b.getType().equals(Material.STONE_BUTTON)) return;
         if (!p.hasPermission(ConfigHandler.getInstance().getFirePermission())) return;
 
-        Block b = e.getClickedBlock();
-        // TODO: Make any button be saveable and keep its delay the same
-        if (b.getType().equals(Material.STONE_BUTTON)){
-            PlayerInfoHandler.getInstance().getPlayerButtons().replace(p, b);
-            p.sendMessage(Utils.cmsg(Strings.BUTTON_SAVED.label));
-        }
+        // TODO: Make any button be saveable and store the right delay
+        PlayerInfoHandler.getInstance().getPlayerButtons().replace(p, b);
+        p.sendMessage(Utils.cmsg(Strings.BUTTON_SAVED.label));
     }
 }

@@ -8,6 +8,8 @@ public enum Strings {
     INVALID_MAGIC_SAND_MATERIAL("&7Invalid magic sand material."),
     MAGIC_SAND_PLACED("&aMagic sand placed."),
     BUTTON_SAVED("&7Button saved for /fire."),
+    BUTTON_NO_EXIST("&cCould not fire a button. (NO_EXIST)"),
+    BUTTON_FIRED("&7Fired!"),
     TOO_FEW_ARGS("&7You've provided too little arguments for this command.");
 
     public final String label;

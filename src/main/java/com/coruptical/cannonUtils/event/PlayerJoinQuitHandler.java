@@ -33,6 +33,7 @@ public class PlayerJoinQuitHandler implements Listener {
             handler.getMagicSandLocations().remove(ms.getLoc());
         }
         handler.getPlayerMagicSand().remove(p);
+        handler.getPlayerButtons().remove(p);
     }
 
 }
