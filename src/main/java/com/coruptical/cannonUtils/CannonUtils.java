@@ -1,12 +1,7 @@
 package com.coruptical.cannonUtils;
 
-import com.coruptical.cannonUtils.command.FireCommand;
-import com.coruptical.cannonUtils.command.MagicSandCommand;
-import com.coruptical.cannonUtils.command.TickCounterCommand;
-import com.coruptical.cannonUtils.event.BlockInteractHandler;
-import com.coruptical.cannonUtils.event.BlockPlaceBreakHandler;
-import com.coruptical.cannonUtils.event.ExplosionEventHandler;
-import com.coruptical.cannonUtils.event.PlayerJoinQuitHandler;
+import com.coruptical.cannonUtils.command.*;
+import com.coruptical.cannonUtils.event.*;
 import com.coruptical.cannonUtils.utils.ConfigHandler;
 import com.coruptical.cannonUtils.utils.ProcessScheduler;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -39,11 +34,16 @@ public final class CannonUtils extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockInteractHandler(), instance);
         getServer().getPluginManager().registerEvents(new PlayerJoinQuitHandler(), instance);
         getServer().getPluginManager().registerEvents(new BlockPlaceBreakHandler(), instance);
+        getServer().getPluginManager().registerEvents(new EntitySpawnHandler(), instance);
     }
 
     private void loadCommands(){
         getCommand("tickcounter").setExecutor(new TickCounterCommand());
         getCommand("magicsand").setExecutor(new MagicSandCommand());
         getCommand("fire").setExecutor(new FireCommand());
+        getCommand("entitytracker").setExecutor(new EntityTrackerCommand());
+        getCommand("stackclearer").setExecutor(new StackClearerCommand());
+        getCommand("msclear").setExecutor(new MSClearCommand());
+        getCommand("tntfill").setExecutor(new TntFillCommand());
     }
 }

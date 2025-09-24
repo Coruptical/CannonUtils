@@ -20,6 +20,8 @@ public class PlayerJoinQuitHandler implements Listener {
         handler.getPlayerTickCounters().put(p, new TickCounter());
         handler.getPlayerMagicSand().put(p, new HashSet<>());
         handler.getPlayerButtons().put(p, null);
+        handler.getPlayerTrackedBlocks().put(p, new HashSet<>());
+        handler.getPlayerLowestTrackingIDs().put(p, 0);
     }
 
     @EventHandler
@@ -30,10 +32,12 @@ public class PlayerJoinQuitHandler implements Listener {
         // Remove magic sand
         HashSet<MagicSand> playerSands = handler.getPlayerMagicSand().get(p);
         for (MagicSand ms : playerSands){
-            handler.getMagicSandLocations().remove(ms.getLoc());
+            handler.getMagicSandLocations().remove(ms.getLocation());
         }
         handler.getPlayerMagicSand().remove(p);
         handler.getPlayerButtons().remove(p);
+        handler.getPlayerTrackedBlocks().remove(p);
+        handler.getPlayerLowestTrackingIDs().remove(p);
     }
 
 }

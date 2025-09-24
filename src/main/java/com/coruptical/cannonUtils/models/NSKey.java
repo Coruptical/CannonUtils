@@ -4,7 +4,9 @@ import org.bukkit.NamespacedKey;
 
 public enum NSKey {
     TICK_COUNTER("tick_counter"),
-    MAGIC_SAND("magic_sand");
+    MAGIC_SAND("magic_sand"),
+    ENTITY_TRACKER("entity_tracker"),
+    STACK_CLEARER("stack_clearer");
 
     public final NamespacedKey key;
 

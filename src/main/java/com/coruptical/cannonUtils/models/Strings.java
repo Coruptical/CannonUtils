@@ -10,7 +10,10 @@ public enum Strings {
     BUTTON_SAVED("&7Button saved for /fire."),
     BUTTON_NO_EXIST("&cCould not fire a button. (NO_EXIST)"),
     BUTTON_FIRED("&7Fired!"),
-    TOO_FEW_ARGS("&7You've provided too little arguments for this command.");
+    TOO_FEW_ARGS("&7You've provided too little arguments for this command."),
+    ERROR_INVALID_ID("&7Please enter a valid id."),
+    ENTITY_TRACKER_NAME("&7[&bEntity Tracker&7]"),
+    STACK_CLEARER_NAME("&7[&fStack Clearer&7]");
 
     public final String label;
 

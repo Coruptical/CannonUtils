@@ -12,7 +12,7 @@ public class MagicSand {
         this.material = material;
     }
 
-    public Location getLoc() {
+    public Location getLocation() {
         return loc;
     }
 

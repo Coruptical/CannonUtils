@@ -33,7 +33,6 @@ public class ProcessScheduler {
                 }
             }
         };
-
         runnable.runTaskTimer(this.plugin, 0L, ConfigHandler.getInstance().getMagicSandPeriod());
     }
 }

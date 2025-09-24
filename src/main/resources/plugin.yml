@@ -15,3 +15,17 @@ commands:
     description: Get magic sand to fill your cannons with sand.
   fire:
     description: Fire a cannon by automatically pressing a saved button.
+  entitytracker:
+    aliases:
+      - et
+    description: Entity tracker master command
+  stackclearer:
+    aliases:
+      - sc
+    description: Get a stack clearer to clear your stacks.
+  msclear:
+    description: Clear all of your magic sand.
+  tntfill:
+    aliases:
+      - tf
+    description: Fill your dispensers with tnt.

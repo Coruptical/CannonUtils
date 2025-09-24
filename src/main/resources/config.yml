@@ -17,5 +17,29 @@ fire_permission: 'cannonutils.fire'
 # This option controls the period of time before each magic sand block places a falling block of its type.
 # It's recommended to leave this at the default,
 # but change it if there is so much magic sand the server is lagging or the default delay isn't short enough for some cannons.
-# Value provided must be a positive integer > 0, otherwise will be set back to default.
+# Value provided must be a positive integer > 0, otherwise the default (8) will be used.
+# This value is in ticks. (e.g. 8 is 0.2sec, 20 is 1sec)
 magic_sand_period: 8
+
+# This option changes the item type that is considered to be the entity tracker.
+entity_tracker: 'GOLDEN_APPLE'
+
+# This option controls the permission name for the entity tracker command.
+entity_tracker_permission: 'cannonutils.entitytracker'
+
+# This option controls the permission name for the stack clearer command.
+stack_clearer_permission: 'cannonutils.stackclearer'
+
+# This option changes the item type that is considered to be the stack clearer.
+stack_clearer: 'BONE'
+
+# This option controls the permission name for the ms clear command.
+msclear_permission: 'cannonutils.msclear'
+
+# This option controls the permission name for the tntfill command.
+tntfill_permission: 'cannonutils.tntfill'
+
+# This option controls the max radius of the tnt fill commmand,
+# It's recommended to not increase this too much, as too large of a radius could cause server crashes.
+# Value provided must be a positive integer, otherwise the default (50) will be used.
+tntfill_max_radius: 50
